@@ -79,4 +79,6 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="action_login_settings">Ustawienia</string>
     <string name="insertServerAddress">Zmień adres serwera</string>
+    <string name="error_invalid_password">Nieprawidłowe hasło</string>
+    <string name="error_field_required">Pole wymagane</string>
 </resources>
