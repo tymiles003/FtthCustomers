@@ -81,4 +81,6 @@
     <string name="insertServerAddress">Zmień adres serwera</string>
     <string name="error_invalid_password">Nieprawidłowe hasło</string>
     <string name="error_field_required">Pole wymagane</string>
+    <string name="action_dashboard_add_issue">Utwórz zgłoszenie</string>
+    <string name="issues_list_title">Lista aktywnych zgłoszeń</string>
 </resources>

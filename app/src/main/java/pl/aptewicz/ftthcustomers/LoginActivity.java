@@ -169,13 +169,15 @@ public class LoginActivity extends AppCompatActivity {
 
 					@Override
 					public void onResponse(JSONObject response) {
+						//Gson gson = new GsonBuilder().serializeNulls().create();
 						FtthCustomer ftthCustomerFromResponse = new Gson()
 								.fromJson(response.toString(), FtthCustomer.class);
 						ftthCustomerFromResponse.setPassword(ftthCustomer.getPassword());
 
 						Intent dashboardActivity = new Intent(LoginActivity.this,
 								DashboardActivity.class);
-						dashboardActivity.putExtra(FtthCustomer.FTTH_CUSTOMER, ftthCustomer);
+						dashboardActivity
+								.putExtra(FtthCustomer.FTTH_CUSTOMER, ftthCustomerFromResponse);
 						startActivity(dashboardActivity);
 						Toast.makeText(LoginActivity.this, "Authorization success",
 								Toast.LENGTH_SHORT).show();
