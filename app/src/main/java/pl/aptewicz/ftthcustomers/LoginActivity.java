@@ -27,7 +27,10 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import pl.aptewicz.ftthcustomers.model.FtthCustomer;
+import pl.aptewicz.ftthcustomers.model.FtthIssue;
 import pl.aptewicz.ftthcustomers.network.FtthCheckerRestApiRequest;
 import pl.aptewicz.ftthcustomers.network.RequestQueueSingleton;
 import pl.aptewicz.ftthcustomers.util.ProgressUtils;
@@ -162,7 +165,17 @@ public class LoginActivity extends AppCompatActivity {
 		ftthCustomer.setUsername(username);
 		ftthCustomer.setPassword(password);
 
-		FtthCheckerRestApiRequest ftthCheckerRestApiRequest = new FtthCheckerRestApiRequest(
+		ArrayList<FtthIssue> ftthIssues = new ArrayList<>();
+		FtthIssue ftthIssue = new FtthIssue();
+		ftthIssues.add(ftthIssue);
+		ftthCustomer.setFtthIssues(ftthIssues);
+		Intent dashboardActivity = new Intent(LoginActivity.this,
+				DashboardActivity.class);
+		dashboardActivity
+				.putExtra(FtthCustomer.FTTH_CUSTOMER, ftthCustomer);
+		startActivity(dashboardActivity);
+
+		/*FtthCheckerRestApiRequest ftthCheckerRestApiRequest = new FtthCheckerRestApiRequest(
 				Request.Method.GET,
 				ServerAddressUtils.getServerHttpAddressWithContext(this) + "/ftthCustomer", null,
 				new Response.Listener<JSONObject>() {
@@ -194,7 +207,7 @@ public class LoginActivity extends AppCompatActivity {
 			}
 		}, ftthCustomer);
 
-		requestQueueSingleton.addToRequestQueue(ftthCheckerRestApiRequest);
+		requestQueueSingleton.addToRequestQueue(ftthCheckerRestApiRequest);*/
 	}
 
 	private void resetErrors() {

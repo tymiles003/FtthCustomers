@@ -83,4 +83,8 @@
     <string name="error_field_required">Pole wymagane</string>
     <string name="action_dashboard_add_issue">Utwórz zgłoszenie</string>
     <string name="issues_list_title">Lista aktywnych zgłoszeń</string>
+    <string name="no_active_issues">Brak aktywnych zgłoszeń</string>
+    <string name="add_issue">Utwórz zgłoszenie</string>
+    <string name="insert_issue_description">Wprowadź opis zgłoszenia</string>
+    <string name="add_issue_text">Opis zgłoszenia</string>
 </resources>
